@@ -8,8 +8,8 @@ python3 setup.py build_ext --inplace
 # comparison.py
 import timeit
 
-cy = timeit.timeit('''example_cy.test(5)''',setup='import example_cy',number=100)
-py = timeit.timeit('''example.test(5)''',setup='import example', number=100)
+cy = timeit.timeit('''sum_loop_c.test(5000)''',setup='import sum_loop_c',number=20000)
+py = timeit.timeit('''sum_loop.test(5000)''',setup='import sum_loop', number=20000)
 
 print(cy, py)
 print('Cython is {}x faster'.format(py/cy))
